@@ -1,0 +1,751 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Header Simples</title>
+</head>
+<style>
+ 
+
+@import url('https://fonts.googleapis.com/css2?family=GFS+Neohellenic:ital,wght@0,400;0,700;1,400;1,700&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Ysabeau+Infant:ital,wght@0,1..1000;1,1..1000&display=swap');
+
+
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    font-family: "Ysabeau Infant", sans-serif;
+    
+  }
+
+
+  .header {
+    background-color: #fff;
+    padding: 17px 30px;
+    margin-right: 300px;
+    margin-left: 100px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+  }
+
+  .left-section {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+  }
+
+
+  .texto {
+    font-size: 23px;
+    color:#2f253c;
+  }
+  .texto a{
+    color: #2f253c;
+  }
+  .texto a:hover{
+    color: #94c7b4;
+  }
+  .buttons {
+    display: flex;
+    gap: 27px;
+  }
+
+  .btn {
+    padding: 8px 16px;
+    border: 1px solid #2f253c;
+    background-color: white;
+    color: #2f253c;
+    cursor: pointer;
+    border-radius: 30px;
+    transition: background 0.3s;
+    font-size: 20px;
+  }
+
+  .btn:hover {
+    background-color: #f0f0f0;
+  }
+
+  .btn-primary {
+    background-color: #2f253c;
+    color: white;
+    font-size: 20px;
+  }
+  .btn-primary a {
+
+    color: white;
+  }
+  .btn-primary:hover {
+    background-color: #6f578b;
+  }
+
+  /* Hero Section */
+
+  .hero {
+      background-color: #ffffff;
+      color: #30253e;
+      text-align: center;
+    }
+
+   .hero .container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  max-width: 1500px; 
+  width: 90%; 
+  height: auto;
+  min-height: 650px; 
+  margin: 0 auto;
+  padding: 50px;
+  color: antiquewhite;
+  border-radius: 50px;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+}
+    .hero-title {
+      font-size: 2.2rem;
+      font-weight: 700;
+      line-height: 1.2;
+    }
+
+    
+   
+ 
+.hero-image0 img {
+  width: 100%; 
+  max-width: 400px; 
+  height: auto; 
+  margin-left: 0; 
+  border-radius: 10px;
+  margin-bottom: 20px; 
+  object-fit: contain; 
+}
+  .hero-image img{
+    height: 500px;
+    
+  }
+
+.hero-text {
+  font-size: 1.5rem;
+  margin-bottom: 2rem;
+  width: 90%; 
+  max-width: 400px; 
+  color: #30253e;
+  text-align: justify;
+  margin-left: 170px; 
+}
+
+.hero-buttons {
+  display: flex;
+  gap: 2rem;
+  margin-left: 0; 
+  justify-content: center; 
+}
+
+.btn22 {
+  margin-left: 0; 
+  padding: 1rem 2rem;
+  font-weight: 700;
+  background: rgb(255, 255, 255);
+  color: #2f253c;
+  font-size: 1.2rem; 
+  cursor: pointer;
+  border-radius: 0.5rem;
+  border-bottom: 2px solid #65846a;
+  border-right: 2px solid #304538;
+  border-top: 2px solid white;
+  border-left: 2px solid white;
+  transition-duration: 1s;
+  transition-property: border-top, border-left, border-bottom, border-right, box-shadow;
+}
+    .btn22:hover {
+      border-top: 2px solid #2f253c;
+
+      border-left: 2px solid  #304538;
+
+      border-bottom: 2px solid #65846a;
+
+      border-right: 2px solid #8cbfb3;
+
+      box-shadow:  #304538 5px 5px,
+        #65846a 10px 10px,#8cbfb3 15px 15px;
+    }
+    .btn22 a{
+      color: #2f253c;
+    }
+
+     .services {
+      background-color:#2f253c;
+
+      text-align: center;
+      font-size: 20PX;
+    }
+
+    .services-grid {
+      display: grid;
+
+      grid-template-columns: repeat(3, 1fr);
+
+      gap: 30px;
+
+      margin-top: 40px;
+    }
+
+    .service-card {
+      background-color:#b0e8db;
+
+      padding: 30px;
+
+      border-radius: 10px;
+
+      transition: transform 0.3s;
+    }
+
+    .service-card:hover {
+      transform: translateY(-10px);
+    }
+
+    .service-card img {
+      width: 80px;
+
+      height: 80px;
+
+      margin-bottom: 20px;
+    }
+
+
+  .section-title, .section-text {
+    text-align: center;
+  }
+  
+  .acesso .section-text {
+    text-align: center;
+  }
+
+  .section-text {
+  text-align: center;
+  margin: 0 auto;
+  max-width: 1000px;
+  color: #ccc;
+  font-size: 25px;
+}
+
+    /* Funcionamento Section */
+
+    .funcionamento {
+      background-color: white;
+    }
+
+    .passos {
+      max-width: 800px;
+
+      margin: 0 auto;
+    }
+
+    .passo {
+      display: flex;
+
+      gap: 2rem;
+
+      margin-bottom: 3rem;
+
+      align-items: flex-start;
+    }
+
+    .passo:last-child {
+      margin-bottom: 0;
+    }
+
+    .passo-numero {
+      background-color: #30253e;
+
+      color: white;
+
+      width: 40px;
+
+      height: 40px;
+
+      border-radius: 50%;
+
+      display: flex;
+
+      align-items: center;
+
+      justify-content: center;
+
+      font-size: 1.8rem;
+
+      font-weight: 700;
+
+      flex-shrink: 0;
+    }
+
+    .passo-content h3 {
+      font-size: 2rem;
+
+      color: #63b872;
+
+      margin-bottom: 1rem;
+    }
+
+    .passo-content p {
+      font-size: 1.5rem;
+
+      color: #666;
+    }
+
+
+
+    
+    /* Benefícios Section */
+
+    .beneficios {
+      background-color: #f0f5ef;
+    }
+
+    .beneficios-grid {
+      display: grid;
+
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+
+      gap: 3rem;
+    }
+
+    .beneficio-item {
+      background: white;
+
+      padding: 3rem;
+
+      border-radius: 10px;
+
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    }
+
+    .beneficio-item h3 {
+      font-size: 2rem;
+
+      color: #63b872;
+
+      margin-bottom: 1.5rem;
+    }
+
+    .beneficio-item ul {
+      padding-left: 2rem;
+    }
+
+    .beneficio-item li {
+      font-size: 1.5rem;
+
+      margin-bottom: 1rem;
+
+      position: relative;
+    }
+
+    .beneficio-item li::before {
+      content: "•";
+
+      color: #80b9b1;
+
+      font-weight: bold;
+
+      display: inline-block;
+
+      width: 1em;
+
+      margin-left: -1em;
+    }
+     /* Acesso Section */
+
+    .acesso {
+      background-color: white;
+    }
+
+    .acesso-buttons {
+      display: grid;
+
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+
+      gap: 3rem;
+
+      max-width: 800px;
+
+      margin: 0 auto;
+    }
+
+    .btn-acesso {
+      background-color: #94c7b4;
+      
+      color:#2f253c;
+
+      padding: 3rem 2rem;
+
+      border-radius: 25px;
+
+      display: flex;
+
+      flex-direction: column;
+
+      align-items: center;
+
+      transition: all 0.3s ease;
+
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    }
+
+    .btn-acesso:hover {
+      background-color: #74a996;
+
+      transform: translateY(-5px);
+
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+    }
+
+    .btn-icon {
+      font-size: 4rem;
+
+      margin-bottom: 1rem;
+    }
+
+    .btn-text {
+      font-size: 2rem;
+
+      font-weight: 600;
+
+      margin-bottom: 0.5rem;
+    }
+
+    .btn-desc {
+      font-size: 1.4rem;
+
+      opacity: 0.8;
+    }
+
+    /* Footer */
+
+
+        footer {
+            background-color: #2f253c;
+            color: white;
+            padding: 2rem;
+            text-align: center;
+            margin-top: 3rem;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .copyright {
+            font-size: 0.9rem;
+            color: #ccc;
+        }
+
+
+</style>
+<body>
+  <header class="header">
+    <div class="left-section">
+      <div class="logo"><img src="assets/Hacktat (1).png" height="90"></div>
+      <div class="texto">|</div>
+      <div class="texto"><a href="#">Projeto</a></div>
+      <div class="texto"><a href="#">Funcionamento</a></div>
+      <div class="texto"><a href="#">Benefícios</a></div>
+      <div class="texto"><a href="#">Acesso</a></div>
+    </div>
+    <div class="buttons">
+      <button class="btn"><a href="Login.html">Login</a></button>
+      <button class="btn btn-primary"><a href="Cadastro.html">Cadastro</a></button>
+    </div>
+  </header>
+
+   <!-- Hero Section -->
+
+   <section class="hero">
+    <div class="container">
+      <div class="hero-content">
+        
+        <div class="hero-image0">
+          <img
+            src="assets/Peonies (2).png"
+            alt="Slogan"
+          />
+        </div>
+
+        <p class="hero-text">
+           Uma plataforma que une cidadãos, catadores e empresas para tornar a
+          reciclagem mais eficiente e acessível.
+        </p>
+
+        <div class="hero-buttons">
+          <a href="#sobre" class="btn22" >Saiba Mais</a>
+
+          <a href="#acesso" class="btn22">Começar Agora</a>
+        </div>
+      </div>
+
+      <div class="hero-image">
+        <img src="assets/Design sem nome.png" alt="Pessoas cuidando da Terra" />
+      </div>
+    </div>
+  </section>
+  <br>
+  <br>
+  <br>
+  <br>
+   <!-- Services Section -->
+
+    <section class="services">
+      <div class="containerS">
+        <br>
+        <br>
+        <br>
+         <br>
+    <br>
+    <br>
+    <br>
+        <h2 style="color: #80b9b1;">Sobre o projeto:</h2>
+
+        <p  class="section-text">Nosso objetivo é desenvolver uma ferramenta que conecte os três
+          principais atores da cadeia de Recolhimento de Resíduos Sólidos
+          Recicláveis no Brasil: cidadãos, catadores e empresas.</p>
+            <br>
+  <br>
+        <div class="services-grid">
+          <div class="service-card">
+            <img
+              src="assets/Peonies (4).png"
+              alt="Reciclar"
+            />
+
+            <h3>Cidadãos</h3>
+
+            <p>Descarte seus resíduos recicláveis de forma fácil e correta,
+              contribuindo para um meio ambiente mais limpo.</p>
+          </div>
+
+          <div class="service-card">
+            <img
+              src="assets/Peonies (3).png"
+              alt="Coletar"
+            />
+
+            <h3>Catadores</h3>
+
+            <p>Tenha maior eficiência na coleta e valorização do seu trabalho
+              essencial para a sociedade.</p>
+          </div>
+
+          <div class="service-card">
+            <img
+              src="assets/Peonies (5).png"
+              alt="Reutilizar"
+            />
+
+            <h3>Empresas</h3>
+
+            <p>Adquira matéria-prima reciclada de qualidade, reduzindo custos e
+              contribuindo para a economia circular.</p>
+          </div>
+        </div>
+      </div>
+      <br>
+        <br>
+        <br>
+         <br>
+         <br>
+        <br>
+        <br>
+         <br>
+    </section>
+
+    <!-- Como Funciona -->
+
+    <section id="funcionamento" class="section funcionamento">
+      <div class="containerF">
+ 
+    <br>
+    <br> <br>
+    <br>
+    <br>
+    <br>
+        <h2 class="section-title">Como Funciona</h2>
+         <br>
+        <br>
+        <div class="passos">
+          <div class="passo">
+            <div class="passo-numero">1</div>
+
+            <div class="passo-content">
+              <h3>Cidadão Agenda a Coleta</h3>
+
+              <p>
+                O cidadão separa seus recicláveis e agenda a coleta através do
+                nosso aplicativo.
+              </p>
+            </div>
+          </div>
+
+          <div class="passo">
+            <div class="passo-numero">2</div>
+
+            <div class="passo-content">
+              <h3>Catador Recebe a Solicitação</h3>
+
+              <p>
+                O catador mais próximo recebe a solicitação e pode aceitar o
+                serviço.
+              </p>
+            </div>
+          </div>
+
+          <div class="passo">
+            <div class="passo-numero">3</div>
+
+            <div class="passo-content">
+              <h3>Coleta é Realizada</h3>
+
+              <p>
+                O catador coleta os materiais no local e horário combinados.
+              </p>
+            </div>
+          </div>
+
+          <div class="passo">
+            <div class="passo-numero">4</div>
+
+            <div class="passo-content">
+              <h3>Materiais São Comercializados</h3>
+
+              <p>
+                Os materiais são levados para cooperativas ou vendidos
+                diretamente para empresas.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    <br>
+    <br>
+    <br>
+    <br>
+    </section>
+
+    <!-- Benefícios e Importância -->
+    
+    <section id="beneficios" class="section beneficios">
+      <div class="containerB">
+    <br>
+    <br>
+    <br>
+    <br>
+       <br>
+    <br>
+    <br>
+    <br>
+    <br>
+        <h2 class="section-title">Benefícios e Importância</h2>
+         <br>
+        <br>
+        <div class="beneficios-grid">
+          <div class="beneficio-item">
+            <h3>Para o Meio Ambiente</h3>
+
+            <ul>
+              <li>Redução de resíduos em aterros sanitários</li>
+
+              <li>Menos poluição do solo, água e ar</li>
+
+              <li>Preservação de recursos naturais</li>
+            </ul>
+          </div>
+
+          <div class="beneficio-item">
+            <h3>Para a Sociedade</h3>
+
+            <ul>
+              <li>Valorização do trabalho dos catadores</li>
+
+              <li>Geração de empregos na cadeia de reciclagem</li>
+
+              <li>Conscientização ambiental</li>
+            </ul>
+          </div>
+
+          <div class="beneficio-item">
+            <h3>Para a Economia</h3>
+
+            <ul>
+              <li>Redução de custos para empresas</li>
+
+              <li>Fomento à economia circular</li>
+
+              <li>Incentivo à inovação sustentável</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+         <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    </section>
+
+    <!-- Área de Acesso -->
+   
+    <section id="acesso" class="section acesso">
+      <div class="container">
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+        <h2 class="section-title">Acesse a Plataforma</h2>
+
+        <p class="section-text" style="font-size: 25px;">
+          Selecione seu perfil para acessar as funcionalidades específicas:
+        </p>
+        <br>
+        <br>
+        <div class="acesso-buttons">
+          <a href="Chat.HTML" class="btn btn-acesso">
+            <span class="btn-icon">👤</span>
+
+            <span class="btn-text">Usuário</span>
+          </a>
+
+          <a href="Agenda.html" class="btn btn-acesso">
+            <span class="btn-icon">♻️</span>
+
+            <span class="btn-text">Catador</span>
+          </a>
+        </div>
+      </div>
+    </section>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+
+    <!-- Footer -->
+
+       <footer>
+        <div class="footer-content">
+            <p class="copyright"> 2025 GreenLine </p>
+            <p class="copyright">Jullia, flávio, Emanuelly </p>
+            <p class="copyright">Etec de Tabaão da Serra</p>
+        </div>
+    </footer>
+
+    
+</body>
+</html>
