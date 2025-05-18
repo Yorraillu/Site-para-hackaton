@@ -1,0 +1,989 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agenda</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+
+@import url('https://fonts.googleapis.com/css2?family=GFS+Neohellenic:ital,wght@0,400;0,700;1,400;1,700&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Ysabeau+Infant:ital,wght@0,1..1000;1,1..1000&display=swap');
+
+
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    font-family: "Ysabeau Infant", sans-serif;
+    
+  }
+        body {
+            background-color:#fff;
+            color: #333;
+        }
+
+        /* Header */
+         .header {
+    background-color: #fff;
+    padding: 17px 30px;
+    margin-right: 300px;
+    margin-left: 100px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+  }
+
+  .left-section {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+  }
+
+
+  .texto {
+    font-size: 23px;
+    color:#2f253c;
+  }
+  .texto a{
+    color: #2f253c;
+  }
+  .texto a:hover{
+    color: #94c7b4;
+  }
+  .buttons {
+    display: flex;
+    gap: 27px;
+    border-radius: 30px;
+  }
+
+  .btn12 {
+    padding: 8px 16px;
+    border: 1px solid #2f253c;
+    background-color: white;
+    color: #2f253c;
+    cursor: pointer;
+    border-radius: 30px;
+    transition: background 0.3s;
+    font-size: 20px;
+  }
+
+  .btn12:hover {
+    background-color: #f0f0f0;
+  }
+
+  .btn-primary12 {
+    background-color: #2f253c;
+    color: white;
+    font-size: 20px;
+    
+  }
+  .btn-primary12 a {
+
+    color: white;
+  }
+  .btn-primary12:hover {
+    background-color: #6f578b;
+  }
+
+        /* Main Content */
+        .main-container {
+            max-width: 1200px;
+            margin: 2rem auto;
+            padding: 0 2rem;
+            display: grid;
+            grid-template-columns: 300px 1fr;
+            gap: 2rem;
+        }
+
+        /* Sidebar */
+        .sidebar {
+            background-color: white;
+            border-radius: 8px;
+            padding: 1.5rem;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.269);
+            height: fit-content;
+        }
+
+        .sidebar-title {
+            font-size: 1.2rem;
+            margin-bottom: 1.5rem;
+            color: #2e8b57;
+            display: flex;
+            align-items: center;
+        }
+
+        .sidebar-title i {
+            margin-right: 10px;
+        }
+
+        .nav-menu {
+            list-style: none;
+        }
+
+        .nav-item {
+            margin-bottom: 0.5rem;
+        }
+
+        .nav-link {
+            display: block;
+            padding: 0.8rem;
+            border-radius: 4px;
+            color: #555;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            font-weight: 500;
+        }
+
+        .nav-link:hover, .nav-link.active {
+            background-color: #e0f7e0;
+            color: #2e8b57;
+        }
+
+        .nav-link i {
+            width: 24px;
+            text-align: center;
+            margin-right: 8px;
+        }
+
+        /* Content Area */
+        .content {
+            background-color: white;
+            border-radius: 8px;
+            padding: 1.5rem;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.269);
+        }
+
+        .content-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1.5rem;
+        }
+
+        .content-title {
+            font-size: 1.5rem;
+            color: #2e8b57;
+        }
+
+        .btn {
+            padding: 0.8rem 1.5rem;
+            border-radius: 4px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            border: none;
+            display: inline-flex;
+            align-items: center;
+        }
+
+        .btn i {
+            margin-right: 8px;
+        }
+
+        .btn-primary {
+            background-color: #2e8b57;
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background-color: #3cb371;
+        }
+
+        /* Agenda */
+        .calendar-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1.5rem;
+        }
+
+        .month-navigation {
+            display: flex;
+            align-items: center;
+        }
+
+        .month-title {
+            font-size: 1.3rem;
+            font-weight: 600;
+            margin: 0 1rem;
+            min-width: 180px;
+            text-align: center;
+        }
+
+        .nav-btn {
+            background: none;
+            border: none;
+            font-size: 1.2rem;
+            cursor: pointer;
+            color: #555;
+            transition: all 0.3s ease;
+        }
+
+        .nav-btn:hover {
+            color: #2e8b57;
+        }
+
+        .view-options {
+            display: flex;
+            gap: 0.5rem;
+        }
+
+        .view-btn {
+            padding: 0.5rem 1rem;
+            background-color: #f0f0f0;
+            color: #555;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .view-btn.active, .view-btn:hover {
+            background-color: #2e8b57;
+            color: white;
+        }
+
+        /* Calendário */
+        .calendar {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        .calendar th {
+            text-align: center;
+            padding: 1rem;
+            background-color: #f5f5f5;
+            color: #555;
+            font-weight: 500;
+        }
+
+        .calendar td {
+            height: 100px;
+            vertical-align: top;
+            padding: 0.5rem;
+            border: 1px solid #eee;
+            transition: all 0.3s ease;
+        }
+
+        .calendar td:hover {
+            background-color: #f9f9f9;
+        }
+
+        .day-number {
+            font-weight: 500;
+            margin-bottom: 0.5rem;
+        }
+
+        .event {
+            font-size: 0.8rem;
+            padding: 0.3rem 0.5rem;
+            margin-bottom: 0.3rem;
+            border-radius: 4px;
+            background-color: #e0f7e0;
+            color: #2e8b57;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+        }
+
+        .event:hover {
+            background-color: #c1f0c1;
+        }
+
+        .event.pending {
+            background-color: #fff3cd;
+            color: #856404;
+        }
+
+        .event.completed {
+            background-color: #d4edda;
+            color: #155724;
+        }
+
+        .event.canceled {
+            background-color: #f8d7da;
+            color: #721c24;
+            text-decoration: line-through;
+        }
+
+        /* Modal de Evento */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            z-index: 1000;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .modal-content {
+            background-color: white;
+            border-radius: 8px;
+            width: 100%;
+            max-width: 500px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+            overflow: hidden;
+        }
+
+        .modal-header {
+            padding: 1rem 1.5rem;
+            background-color: #2e8b57;
+            color: white;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .modal-title {
+            font-size: 1.2rem;
+            font-weight: 500;
+        }
+
+        .close-btn {
+            background: none;
+            border: none;
+            color: white;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+        .modal-body {
+            padding: 1.5rem;
+        }
+
+        .form-group {
+            margin-bottom: 1rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+        }
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 0.8rem;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 1rem;
+        }
+
+        .form-group textarea {
+            min-height: 100px;
+            resize: vertical;
+        }
+
+        .form-actions {
+            display: flex;
+            justify-content: flex-end;
+            gap: 0.5rem;
+            margin-top: 1rem;
+        }
+
+        .btn-secondary {
+            background-color: #6c757d;
+            color: white;
+        }
+
+        .btn-secondary:hover {
+            background-color: #5a6268;
+        }
+
+        .btn-danger {
+            background-color: #dc3545;
+            color: white;
+        }
+
+        .btn-danger:hover {
+            background-color: #c82333;
+        }
+
+        /* Lista de Coletas */
+        .collection-list {
+            list-style: none;
+        }
+
+        .collection-item {
+            padding: 1rem;
+            border-bottom: 1px solid #eee;
+            transition: all 0.3s ease;
+        }
+
+        .collection-item:hover {
+            background-color: #f9f9f9;
+        }
+
+        .collection-header {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 0.5rem;
+        }
+
+        .collection-title {
+            font-weight: 500;
+            color: #2e8b57;
+        }
+
+        .collection-status {
+            font-size: 0.8rem;
+            padding: 0.3rem 0.6rem;
+            border-radius: 4px;
+            font-weight: 500;
+        }
+
+        .status-pending {
+            background-color: #fff3cd;
+            color: #856404;
+        }
+
+        .status-completed {
+            background-color: #d4edda;
+            color: #155724;
+        }
+
+        .status-canceled {
+            background-color: #f8d7da;
+            color: #721c24;
+        }
+
+        .collection-details {
+            display: flex;
+            gap: 1rem;
+            font-size: 0.9rem;
+            color: #666;
+            margin-bottom: 0.5rem;
+        }
+
+        .collection-actions {
+            display: flex;
+            gap: 0.5rem;
+            justify-content: flex-end;
+        }
+
+        .action-btn {
+            padding: 0.3rem 0.6rem;
+            font-size: 0.8rem;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            border: none;
+        }
+
+        .action-btn i {
+            margin-right: 5px;
+        }
+
+        /* Responsivo */
+        @media (max-width: 992px) {
+            .main-container {
+                grid-template-columns: 1fr;
+            }
+
+            .calendar td {
+                height: 80px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .header-container {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            nav ul {
+                margin-top: 1rem;
+            }
+
+            .calendar-header {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 1rem;
+            }
+
+            .view-options {
+                align-self: flex-end;
+            }
+
+            .calendar th, .calendar td {
+                padding: 0.3rem;
+                font-size: 0.8rem;
+            }
+
+            .day-number {
+                font-size: 0.7rem;
+            }
+
+            .event {
+                font-size: 0.6rem;
+                padding: 0.2rem;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .month-navigation {
+                width: 100%;
+                justify-content: space-between;
+            }
+
+            .view-options {
+                width: 100%;
+                justify-content: space-between;
+                margin-top: 1rem;
+            }
+
+            .view-btn {
+                flex: 1;
+                text-align: center;
+            }
+        }
+                /* Footer */
+        footer {
+            background-color: #2f253c;
+            color: white;
+            padding: 2rem;
+            text-align: center;
+            margin-top: 3rem;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .copyright {
+            font-size: 0.9rem;
+            color: #ccc;
+        }
+
+    </style>
+</head>
+<body>
+     <header class="header">
+    <div class="left-section">
+      <div class="logo"><img src="assets/Hacktat (1).png" height="90"></div>
+      <div class="texto">|</div>
+      <div class="texto"><a href="Início.html">Início</a></div>
+      <div class="texto"><a href="Agenda.html">Agenda</a></div>
+    </div>
+    <div class="buttons">
+      <button class="btn12"><a href="Login.html">Login</a></button>
+      <button class="btn btn-primary12"><a href="Cadastro.html">Cadastro</a></button>
+    </div>
+  </header>
+
+    <main class="main-container">
+        <aside class="sidebar">
+            <h2 class="sidebar-title"><i class="fas fa-calendar-day"></i> Agenda</h2>
+            <ul class="nav-menu">
+                <li class="nav-item"><a href="#" class="nav-link active"><i class="fas fa-calendar-week"></i> Visão Geral</a></li>
+                <li class="nav-item"><a href="#" class="nav-link"><i class="fas fa-list"></i> Lista de Coletas</a></li>
+                <li class="nav-item"><a href="#" class="nav-link"><i class="fas fa-plus-circle"></i> Nova Coleta</a></li>
+                <li class="nav-item"><a href="#" class="nav-link"><i class="fas fa-filter"></i> Filtros</a></li>
+                <li class="nav-item"><a href="#" class="nav-link"><i class="fas fa-cog"></i> Configurações</a></li>
+            </ul>
+
+            <h2 class="sidebar-title" style="margin-top: 2rem;"><i class="fas fa-tags"></i> Legenda</h2>
+            <div style="font-size: 0.9rem;">
+                <div style="display: flex; align-items: center; margin-bottom: 0.5rem;">
+                    <div style="width: 15px; height: 15px; background-color: #e0f7e0; border-radius: 3px; margin-right: 8px;"></div>
+                    <span>Agendada</span>
+                </div>
+                <div style="display: flex; align-items: center; margin-bottom: 0.5rem;">
+                    <div style="width: 15px; height: 15px; background-color: #fff3cd; border-radius: 3px; margin-right: 8px;"></div>
+                    <span>Pendente</span>
+                </div>
+                <div style="display: flex; align-items: center; margin-bottom: 0.5rem;">
+                    <div style="width: 15px; height: 15px; background-color: #d4edda; border-radius: 3px; margin-right: 8px;"></div>
+                    <span>Concluída</span>
+                </div>
+                <div style="display: flex; align-items: center;">
+                    <div style="width: 15px; height: 15px; background-color: #f8d7da; border-radius: 3px; margin-right: 8px;"></div>
+                    <span>Cancelada</span>
+                </div>
+            </div>
+        </aside>
+
+        <div class="content">
+            <div class="content-header">
+                <h2 class="content-title">Agenda de Coletas</h2>
+                <button class="btn btn-primary" id="addEventBtn">
+                    <i class="fas fa-plus"></i> Nova Coleta
+                </button>
+            </div>
+
+            <div class="calendar-header">
+                <div class="month-navigation">
+                    <button class="nav-btn" id="prevMonth"><i class="fas fa-chevron-left"></i></button>
+                    <h3 class="month-title" id="currentMonth">Junho 2023</h3>
+                    <button class="nav-btn" id="nextMonth"><i class="fas fa-chevron-right"></i></button>
+                </div>
+                <div class="view-options">
+                    <button class="view-btn">Dia</button>
+                    <button class="view-btn">Semana</button>
+                    <button class="view-btn active">Mês</button>
+                    <button class="view-btn">Ano</button>
+                </div>
+            </div>
+
+            <table class="calendar">
+                <thead>
+                    <tr>
+                        <th>Dom</th>
+                        <th>Seg</th>
+                        <th>Ter</th>
+                        <th>Qua</th>
+                        <th>Qui</th>
+                        <th>Sex</th>
+                        <th>Sáb</th>
+                    </tr>
+                </thead>
+                <tbody id="calendarBody">
+                
+                </tbody>
+            </table>
+        </div>
+    </main>
+
+    <!-- Modal de Evento -->
+    <div class="modal" id="eventModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 class="modal-title">Adicionar Nova Coleta</h3>
+                <button class="close-btn" id="closeModal">&times;</button>
+            </div>
+            <div class="modal-body">
+                <form id="eventForm">
+                    <div class="form-group">
+                        <label for="eventTitle">Título da Coleta</label>
+                        <input type="text" id="eventTitle" required placeholder="Ex: Coleta de plástico no bairro X">
+                    </div>
+                    <div class="form-group">
+                        <label for="eventDate">Data</label>
+                        <input type="date" id="eventDate" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="eventTime">Horário</label>
+                        <input type="time" id="eventTime" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="eventType">Tipo de Material</label>
+                        <select id="eventType" required>
+                            <option value="">Selecione...</option>
+                            <option value="plastic">Plástico</option>
+                            <option value="paper">Papel</option>
+                            <option value="glass">Vidro</option>
+                            <option value="metal">Metal</option>
+                            <option value="electronics">Eletrônicos</option>
+                            <option value="batteries">Pilhas e Baterias</option>
+                            <option value="oil">Óleo de Cozinha</option>
+                            <option value="other">Outros</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="eventLocation">Local/Endereço</label>
+                        <input type="text" id="eventLocation" required placeholder="Endereço completo ou ponto de referência">
+                    </div>
+                    <div class="form-group">
+                        <label for="eventStatus">Status</label>
+                        <select id="eventStatus">
+                            <option value="scheduled">Agendada</option>
+                            <option value="pending">Pendente</option>
+                            <option value="completed">Concluída</option>
+                            <option value="canceled">Cancelada</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="eventNotes">Observações</label>
+                        <textarea id="eventNotes" placeholder="Detalhes adicionais sobre a coleta"></textarea>
+                    </div>
+                    <div class="form-actions">
+                        <button type="button" class="btn btn-danger" id="deleteBtn">
+                            <i class="fas fa-trash"></i> Excluir
+                        </button>
+                        <button type="button" class="btn btn-secondary" id="cancelBtn">
+                            <i class="fas fa-times"></i> Cancelar
+                        </button>
+                        <button type="submit" class="btn btn-primary">
+                            <i class="fas fa-save"></i> Salvar
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+       <footer>
+        <div class="footer-content">
+            <p class="copyright"> 2025 GreenLine</p>
+            <p class="copyright">Jullia, flávio, Emanuelly </p>
+            <p class="copyright">Etec de Tabaão da Serra</p>
+        </div>
+    </footer>
+    <script>
+        // Dados de exemplo
+        const events = [
+            {
+                id: 1,
+                title: "Coleta no Parque Central",
+                date: "2023-06-05",
+                time: "09:00",
+                type: "plastic",
+                location: "Parque Central, Av. Principal, 1000",
+                status: "completed",
+                notes: "Trazer sacos resistentes para plástico"
+            },
+            {
+                id: 2,
+                title: "Coleta de Eletrônicos",
+                date: "2023-06-12",
+                time: "14:00",
+                type: "electronics",
+                location: "Escola Municipal, Rua das Flores, 500",
+                status: "scheduled",
+                notes: "Verificar quantidade antes de sair"
+            },
+            {
+                id: 3,
+                title: "Coleta Semanal - Bairro Verde",
+                date: "2023-06-15",
+                time: "08:00",
+                type: "paper",
+                location: "Bairro Verde, pontos de coleta habituais",
+                status: "pending",
+                notes: "Equipe reduzida nesta semana"
+            },
+            {
+                id: 4,
+                title: "Coleta de Óleo",
+                date: "2023-06-20",
+                time: "10:00",
+                type: "oil",
+                location: "Supermercado Bom Preço",
+                status: "scheduled",
+                notes: "Trazer recipientes especiais para óleo"
+            },
+            {
+                id: 5,
+                title: "Coleta Cancelada - Chuva",
+                date: "2023-06-22",
+                time: "13:00",
+                type: "metal",
+                location: "Feira Livre",
+                status: "canceled",
+                notes: "Remarcar para próxima semana"
+            }
+        ];
+
+        // Variáveis globais
+        let currentDate = new Date();
+        let selectedEvent = null;
+
+        // Elementos do DOM
+        const calendarBody = document.getElementById('calendarBody');
+        const currentMonthElement = document.getElementById('currentMonth');
+        const prevMonthBtn = document.getElementById('prevMonth');
+        const nextMonthBtn = document.getElementById('nextMonth');
+        const addEventBtn = document.getElementById('addEventBtn');
+        const eventModal = document.getElementById('eventModal');
+        const closeModalBtn = document.getElementById('closeModal');
+        const cancelBtn = document.getElementById('cancelBtn');
+        const deleteBtn = document.getElementById('deleteBtn');
+        const eventForm = document.getElementById('eventForm');
+
+        // Inicialização
+        document.addEventListener('DOMContentLoaded', () => {
+            renderCalendar();
+            setupEventListeners();
+        });
+
+        // Renderizar calendário
+        function renderCalendar() {
+            // Limpar calendário
+            calendarBody.innerHTML = '';
+
+            // Configurar data atual
+            const firstDay = new Date(currentDate.getFullYear(), currentDate.getMonth(), 1);
+            const lastDay = new Date(currentDate.getFullYear(), currentDate.getMonth() + 1, 0);
+            const daysInMonth = lastDay.getDate();
+            const startingDay = firstDay.getDay();
+
+            // Atualizar título do mês
+            const months = ["Janeiro", "Fevereiro", "Março", "Abril", "Maio", "Junho", "Julho", "Agosto", "Setembro", "Outubro", "Novembro", "Dezembro"];
+            currentMonthElement.textContent = `${months[currentDate.getMonth()]} ${currentDate.getFullYear()}`;
+
+            // Criar células do calendário
+            let date = 1;
+            for (let i = 0; i < 6; i++) {
+                // Criar linha
+                const row = document.createElement('tr');
+
+                // Criar células
+                for (let j = 0; j < 7; j++) {
+                    const cell = document.createElement('td');
+                    
+                    if (i === 0 && j < startingDay) {
+                        // Célula vazia antes do primeiro dia do mês
+                        cell.textContent = '';
+                    } else if (date > daysInMonth) {
+                        // Célula vazia após o último dia do mês
+                        cell.textContent = '';
+                    } else {
+                        // Célula com dia do mês
+                        const dayDiv = document.createElement('div');
+                        dayDiv.className = 'day-number';
+                        dayDiv.textContent = date;
+
+                        // Verificar se há eventos neste dia
+                        const currentDateStr = `${currentDate.getFullYear()}-${String(currentDate.getMonth() + 1).padStart(2, '0')}-${String(date).padStart(2, '0')}`;
+                        const dayEvents = events.filter(event => event.date === currentDateStr);
+
+                        // Adicionar eventos à célula
+                        dayEvents.forEach(event => {
+                            const eventDiv = document.createElement('div');
+                            eventDiv.className = `event ${event.status}`;
+                            eventDiv.textContent = event.title;
+                            eventDiv.dataset.id = event.id;
+                            eventDiv.addEventListener('click', () => openEditModal(event.id));
+                            cell.appendChild(eventDiv);
+                        });
+
+                        cell.appendChild(dayDiv);
+                        date++;
+                    }
+
+                    row.appendChild(cell);
+                }
+
+                calendarBody.appendChild(row);
+
+                // Parar de criar linhas se já preenchemos todos os dias
+                if (date > daysInMonth) {
+                    break;
+                }
+            }
+        }
+
+        // Configurar listeners de eventos
+        function setupEventListeners() {
+            // Navegação do mês
+            prevMonthBtn.addEventListener('click', () => {
+                currentDate.setMonth(currentDate.getMonth() - 1);
+                renderCalendar();
+            });
+
+            nextMonthBtn.addEventListener('click', () => {
+                currentDate.setMonth(currentDate.getMonth() + 1);
+                renderCalendar();
+            });
+
+            // Botão de adicionar evento
+            addEventBtn.addEventListener('click', openAddModal);
+
+            // Fechar modal
+            closeModalBtn.addEventListener('click', closeModal);
+            cancelBtn.addEventListener('click', closeModal);
+
+            // Deletar evento
+            deleteBtn.addEventListener('click', deleteEvent);
+
+            // Formulário de evento
+            eventForm.addEventListener('submit', saveEvent);
+        }
+
+        // Abrir modal para adicionar evento
+        function openAddModal() {
+            selectedEvent = null;
+            document.getElementById('eventTitle').value = '';
+            document.getElementById('eventDate').value = '';
+            document.getElementById('eventTime').value = '';
+            document.getElementById('eventType').value = '';
+            document.getElementById('eventLocation').value = '';
+            document.getElementById('eventStatus').value = 'scheduled';
+            document.getElementById('eventNotes').value = '';
+            
+            deleteBtn.style.display = 'none';
+            document.querySelector('.modal-title').textContent = 'Adicionar Nova Coleta';
+            
+            eventModal.style.display = 'flex';
+        }
+
+        // Abrir modal para editar evento
+        function openEditModal(eventId) {
+            selectedEvent = events.find(event => event.id === eventId);
+            
+            document.getElementById('eventTitle').value = selectedEvent.title;
+            document.getElementById('eventDate').value = selectedEvent.date;
+            document.getElementById('eventTime').value = selectedEvent.time;
+            document.getElementById('eventType').value = selectedEvent.type;
+            document.getElementById('eventLocation').value = selectedEvent.location;
+            document.getElementById('eventStatus').value = selectedEvent.status;
+            document.getElementById('eventNotes').value = selectedEvent.notes || '';
+            
+            deleteBtn.style.display = 'block';
+            document.querySelector('.modal-title').textContent = 'Editar Coleta';
+            
+            eventModal.style.display = 'flex';
+        }
+
+        // Fechar modal
+        function closeModal() {
+            eventModal.style.display = 'none';
+        }
+
+        // Salvar evento
+        function saveEvent(e) {
+            e.preventDefault();
+            
+            const eventData = {
+                id: selectedEvent ? selectedEvent.id : Date.now(),
+                title: document.getElementById('eventTitle').value,
+                date: document.getElementById('eventDate').value,
+                time: document.getElementById('eventTime').value,
+                type: document.getElementById('eventType').value,
+                location: document.getElementById('eventLocation').value,
+                status: document.getElementById('eventStatus').value,
+                notes: document.getElementById('eventNotes').value
+            };
+            
+            if (selectedEvent) {
+                // Atualizar evento existente
+                const index = events.findIndex(event => event.id === selectedEvent.id);
+                events[index] = eventData;
+            } else {
+                // Adicionar novo evento
+                events.push(eventData);
+            }
+            
+            renderCalendar();
+            closeModal();
+        }
+
+        // Deletar evento
+        function deleteEvent() {
+            if (selectedEvent) {
+                const index = events.findIndex(event => event.id === selectedEvent.id);
+                events.splice(index, 1);
+                renderCalendar();
+                closeModal();
+            }
+        }
+
+        // Fechar modal ao clicar fora
+        window.addEventListener('click', (e) => {
+            if (e.target === eventModal) {
+                closeModal();
+            }
+        });
+    </script>
+</body>
+</html>
