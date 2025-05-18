@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Login - IBuild</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=GFS+Neohellenic:ital,wght@0,400;0,700;1,400;1,700&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Ysabeau+Infant:ital,wght@0,1..1000;1,1..1000&display=swap');
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      text-decoration: none;
+      font-family: "Ysabeau Infant", sans-serif;
+    }
+
+    body {
+      background-color: #2f253c;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+    }
+    
+    .container {
+      background-color: #55436c;
+      padding: 40px;
+      border-radius: 8px;
+      width: 100%;
+      max-width: 400px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      text-align: center;
+    }
+    
+    .logo {
+      width: 200px;
+      margin-bottom: 10px;
+    }
+    
+    h1 {
+      font-size: 1.5rem;
+      margin-bottom: 30px;
+      color: #fff;
+    }
+    
+    input[type="email"],
+    input[type="password"] {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 15px;
+      border: 1px solid #ccc;
+      border-radius: 20px;
+      background-color: #f5f3f0;
+    }
+    
+    button {
+      width: 100%;
+      padding: 10px;
+      border: none;
+      border-radius: 20px;
+      background-color: #94c7b4;
+      color: #2f253c;
+      font-weight: bold;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+    
+    button:hover {
+      background-color: #74a996;
+    }
+    
+    .link {
+      margin-top: 15px;
+      display: block;
+      color: #fff;
+      text-decoration: none;
+      font-size: 0.9rem;
+    }
+    
+    .link:hover {
+      text-decoration: underline;
+      color: #94c7b4;
+    }
+    
+    .message {
+      margin-top: 20px;
+      font-size: 1rem;
+      font-weight: bold;
+      color: white;
+    }
+    
+    .error {
+      color: #ff6b6b;
+    }
+    
+    .success {
+      color: #94c7b4;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <img src="assets/Hacktat (1).png" alt="Logo" class="logo" />
+    <h1>Bem-vindo de volta!</h1>
+    
+    <form id="login-form">
+      <input type="email" id="email" placeholder="Email" required />
+      <input type="password" id="senha" placeholder="Senha" required />
+      
+      <button type="submit">Entrar</button>
+    </form>
+    
+    <a href="Cadastro.html" class="link">Não tem uma conta? Cadastre-se</a>
+    <div id="message" class="message"></div>
+      <a href="Início.html" class="link">Início</a>
+    <div id="message" class="message"></div>
+  </div>
+
+  <script>
+    document.getElementById("login-form").addEventListener("submit", function(e) {
+      e.preventDefault();
+      
+      const email = document.getElementById("email").value;
+      const senha = document.getElementById("senha").value;
+      const messageDiv = document.getElementById("message");
+      
+      messageDiv.classList.remove("success", "error");
+      
+      // Verificar usuários cadastrados
+      let users = JSON.parse(localStorage.getItem("users")) || [];
+      const user = users.find(u => u.email === email);
+      
+      if (!user) {
+        messageDiv.textContent = "Email não cadastrado!";
+        messageDiv.classList.add("error");
+        return;
+      }
+      
+      if (user.senha !== senha) {
+        messageDiv.textContent = "Senha incorreta!";
+        messageDiv.classList.add("error");
+        return;
+      }
+      
+      // Login bem-sucedido
+      messageDiv.textContent = "Login realizado com sucesso!";
+      messageDiv.classList.add("success");
+      
+      // Armazenar usuário logado
+      localStorage.setItem("loggedInUser", JSON.stringify(user));
+      
+      setTimeout(() => {
+        window.location.href = "Perfil.html";
+      }, 1000);
+    });
+  </script>
+</body>
+</html>
