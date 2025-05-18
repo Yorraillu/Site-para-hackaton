@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Chat - IBuild</title><link rel="stylesheet" href="chat.css">
+  </head>
+  <style>
+   
+@import url('https://fonts.googleapis.com/css2?family=GFS+Neohellenic:ital,wght@0,400;0,700;1,400;1,700&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Ysabeau+Infant:ital,wght@0,1..1000;1,1..1000&display=swap');
+
+
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    font-family: "Ysabeau Infant", sans-serif;
+    font-size: 20px;
+    
+  }
+
+
+
+  .header {
+    background-color: #fff;
+    padding: 17px 30px;
+    margin-right: 300px;
+    margin-left: 100px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+  }
+
+  .left-section {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+  }
+
+
+  .texto {
+    font-size: 23px;
+    color:#2f253c;
+  }
+  .texto a{
+    color: #2f253c;
+  }
+  .texto a:hover{
+    color: #94c7b4;
+  }
+  .buttons {
+    display: flex;
+    gap: 27px;
+  }
+
+  .btn {
+    padding: 8px 16px;
+    border: 1px solid #2f253c;
+    background-color: white;
+    color: #2f253c;
+    cursor: pointer;
+    border-radius: 30px;
+    transition: background 0.3s;
+    font-size: 20px;
+  }
+
+  .btn:hover {
+    background-color: #f0f0f0;
+  }
+
+  .btn-primary {
+    background-color: #2f253c;
+    color: white;
+    font-size: 20px;
+  }
+  .btn-primary a {
+
+    color: white;
+  }
+  .btn-primary:hover {
+    background-color: #6f578b;
+  }
+          /* Footer */
+        footer {
+            background-color: #2f253c;
+            color: white;
+            padding: 2rem;
+            text-align: center;
+            margin-top: 3rem;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .copyright {
+            font-size: 0.9rem;
+            color: #ccc;
+        }
+
+.chat-wrapper {display: flex;max-width: 1200px;height: 75vh;margin: 2rem auto;background: white;border-radius: 1rem;box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);overflow: hidden;}.chat-list {width: 30%;border-right: 1px solid #ccc;background-color: #f7f7f7;padding: 1rem;overflow-y: auto;}.chat-list h2 {margin-bottom: 1rem;font-size: 1.1rem;color: #333;}
+.chat-user {padding: 0.8rem;border-radius: 0.6rem;
+margin-bottom: 0.5rem;cursor: pointer;transition: background-color 0.2s;}
+.chat-user:hover {background-color:#a9e5cf;}
+.chat-user.active {background-color: #80b9b1;color: white;font-weight: bold;}.chat-content {flex: 1;display: flex;flex-direction: column;justify-content: space-between;}.chat-messages {flex: 1;padding: 1rem;overflow-y: auto;}
+.message {margin-bottom: 1rem;max-width: 75%;padding: 0.8rem 1rem;border-radius: 1rem;line-height: 1.4;}
+.message.user {background-color: #a9e5cf;align-self: flex-end;}.message.bot {background-color: #f1f1f1;align-self: flex-start;}
+.chat-input {display: flex;border-top: 1px solid #ccc;}.chat-input input {flex: 1;padding: 1rem;border: none;outline: none;
+font-size: 1rem;border-radius: 0 0 0 1rem;}
+.chat-input button {
+  background-color: #2f253c;color: white;border: none;padding: 0 1.5rem;cursor: pointer;font-weight: bold;font-size: 1rem;border-radius: 0 0 1rem 0;transition: background-color 0.2s;}
+  .chat-input button:hover {background-color:#56446d;}
+  </style>
+  <body>
+    <header class="header">
+    <div class="left-section">
+      <div class="logo"><img src="assets/Hacktat (1).png" height="90"></div>
+      <div class="texto">|</div>
+      <div class="texto"><a href="Início.html">Início</a></div>
+      <div class="texto"><a href="Chat.HTML">Chat</a></div>
+      <div class="texto"><a href="Perfil.html">Perfil</a></div>
+      <div class="texto"><a href="PontosC.html">Pontos de coleta</a></div>
+    </div>
+    <div class="buttons">
+      <button class="btn">Entrar</button>
+      <button class="btn btn-primary">Cadastrar</button>
+    </div>
+  </header>
+
+    <main class="chat-wrapper"><!-- Lista de conversas -->
+      <aside class="chat-list"><h2>Conversas</h2>
+        <div class="chat-user active">Catador 1</div>
+        <div class="chat-user">Catador 2</div>
+        <div class="chat-user">Catador 3</div>
+      </aside><!-- Janela de mensagens -->
+      <section class="chat-content">
+        <div class="chat-messages">
+          <div class="message bot">Olá! Como posso te ajudar hoje?</div>
+          <div class="message user">Quais os materiais que o senhor precisa de coleta?</div>
+          <div class="message bot">Podemos discutir sobre os preços?</div>
+        </div>
+        <div class="chat-input">
+          <input type="text" placeholder="Digite sua mensagem..." />
+          <button>Enviar</button>
+        </div>
+      </section>
+    </main>
+       <footer>
+        <div class="footer-content">
+            <p class="copyright"> 2025 GreenLine</p>
+            <p class="copyright">Jullia, flávio, Emanuelly </p>
+            <p class="copyright">Etec de Tabaão da Serra</p>
+        </div>
+    </footer>
+  </body>
+</html>
